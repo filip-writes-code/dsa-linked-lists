@@ -89,6 +89,19 @@ class LinkedList {
     }
     return false;
   }
+  // Returns the index of the node containing the given value.
+  // If the value can’t be found in the list, it should return -1.
+  // If more than one node has a value matching the given value, it should return the index of the first node with the matching value.
+  findIndex(value) {
+    let currentNode = this.head;
+    let currentIndex = 0;
+    while (currentNode) {
+      if (currentNode.value === value) return currentIndex;
+      currentNode = currentNode.nextNode;
+      currentIndex++;
+    }
+    return -1;
+  }
 }
 
 class Node {

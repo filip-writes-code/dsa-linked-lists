@@ -109,4 +109,21 @@ describe("LinkedLists testing with a list that is already set up", () => {
   test("contains('darla') should return false", () => {
     expect(testList.contains("darla")).toBe(false);
   });
+
+  test("findIndex('zola') should return 4", () => {
+    expect(testList.findIndex("zola")).toBe(4);
+  });
+
+  test("findIndex('dog') should return 0", () => {
+    expect(testList.findIndex("dog")).toBe(0);
+  });
+
+  test("findIndex('darla') should return -1", () => {
+    expect(testList.findIndex("darla")).toBe(-1);
+  });
+
+  test("findIndex('zola') should return 0, if prepended", () => {
+    testList.prepend("zola");
+    expect(testList.findIndex("zola")).toBe(0);
+  });
 });
