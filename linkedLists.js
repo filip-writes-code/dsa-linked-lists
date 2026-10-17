@@ -64,3 +64,5 @@ class Node {
     this.nextNode = null;
   }
 }
+
+module.exports = LinkedList;

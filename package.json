@@ -1,0 +1,23 @@
+{
+  "name": "dsa-linked-lists",
+  "version": "1.0.0",
+  "description": "Linked lists data structure",
+  "homepage": "https://github.com/filip-writes-code/dsa-linked-lists#readme",
+  "bugs": {
+    "url": "https://github.com/filip-writes-code/dsa-linked-lists/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filip-writes-code/dsa-linked-lists.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "linkedLists.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
