@@ -35,8 +35,10 @@ class LinkedList {
 
   //returns the total number of nodes in the list
   size() {
-    let totalNodes = 0;
+    if (!this.head) return 0;
+    //if not empty
     let currentNode = this.head;
+    let totalNodes = 1;
     while (currentNode.nextNode) {
       totalNodes++;
       currentNode = currentNode.nextNode;
