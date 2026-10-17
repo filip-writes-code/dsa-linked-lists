@@ -2,6 +2,7 @@ const LinkedList = require("./linkedLists");
 
 let testList;
 
+//test with a fresh list for each test instance
 describe("LinkedLists class testing with setup and teardown", () => {
   beforeEach(() => {
     testList = new LinkedList();
@@ -32,8 +33,18 @@ describe("LinkedLists class testing with setup and teardown", () => {
     testList.prepend("door");
     expect(testList.head.value).toBe("door");
   });
+
+  test("tail() should return the last element", () => {
+    testList.append("house");
+    testList.append("door");
+    expect(testList.tail().value).toBe("door");
+  });
+
+  test("if empty, tail() should return undefined", () => {
+    expect(testList.tail()).toBe(undefined);
+  });
 });
-// test 2
+// tests with an already populated list
 describe("LinkedLists testing with a list that is already set up", () => {
   beforeAll(() => {
     testList = new LinkedList();
@@ -46,5 +57,9 @@ describe("LinkedLists testing with a list that is already set up", () => {
 
   test("the size of the list should be 5", () => {
     expect(testList.size()).toBe(5);
+  });
+
+  test("tail should return the last node in the list", () => {
+    expect(testList.tail().value).toBe("zola");
   });
 });
