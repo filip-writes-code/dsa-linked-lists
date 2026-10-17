@@ -80,6 +80,15 @@ class LinkedList {
     this.head = newHead;
     return currentHead;
   }
+  //returns true if passed value is in the list
+  contains(value) {
+    let currentNode = this.head;
+    while (currentNode) {
+      if (currentNode.value === value) return true;
+      currentNode = currentNode.nextNode;
+    }
+    return false;
+  }
 }
 
 class Node {

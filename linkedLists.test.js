@@ -53,10 +53,14 @@ describe("LinkedLists class testing with setup and teardown", () => {
     expect(testList.pop().value).toBe("dog");
     expect(testList.head).toBe(null);
   });
+
+  test("contains('zola') should return false on empy list", () => {
+    expect(testList.contains("zola")).toBe(false);
+  });
 });
 // tests with an already populated list
 describe("LinkedLists testing with a list that is already set up", () => {
-  beforeAll(() => {
+  beforeEach(() => {
     testList = new LinkedList();
     testList.append("dog");
     testList.append("cat");
@@ -92,5 +96,17 @@ describe("LinkedLists testing with a list that is already set up", () => {
   test("pop() should return dog, and move cat to head", () => {
     expect(testList.pop().value).toBe("dog");
     expect(testList.at(0).value).toBe("cat");
+  });
+
+  test("contains('dog') should return true", () => {
+    expect(testList.contains("dog")).toBe(true);
+  });
+
+  test("contains('zola') should return true", () => {
+    expect(testList.contains("zola")).toBe(true);
+  });
+
+  test("contains('darla') should return false", () => {
+    expect(testList.contains("darla")).toBe(false);
   });
 });
