@@ -43,6 +43,16 @@ describe("LinkedLists class testing with setup and teardown", () => {
   test("if empty, tail() should return undefined", () => {
     expect(testList.tail()).toBe(undefined);
   });
+
+  test("pop() should return undefined on an empty list", () => {
+    expect(testList.pop()).toBe(undefined);
+  });
+
+  test("pop() should return dog and head should be null, on a single item list", () => {
+    testList.append("dog");
+    expect(testList.pop().value).toBe("dog");
+    expect(testList.head).toBe(null);
+  });
 });
 // tests with an already populated list
 describe("LinkedLists testing with a list that is already set up", () => {
@@ -77,5 +87,10 @@ describe("LinkedLists testing with a list that is already set up", () => {
 
   test("at(6) should return undefined", () => {
     expect(testList.at(6)).toBe(undefined);
+  });
+
+  test("pop() should return dog, and move cat to head", () => {
+    expect(testList.pop().value).toBe("dog");
+    expect(testList.at(0).value).toBe("cat");
   });
 });

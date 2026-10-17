@@ -69,6 +69,17 @@ class LinkedList {
     }
     return currentNode;
   }
+  // removes the head node from the list and returns it's value
+  pop() {
+    // if used on an empty list, returns undefined
+    if (!this.head) return undefined;
+
+    //point the current head to the next node
+    let currentHead = this.head;
+    let newHead = currentHead.nextNode;
+    this.head = newHead;
+    return currentHead;
+  }
 }
 
 class Node {
