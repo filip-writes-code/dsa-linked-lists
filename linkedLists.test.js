@@ -62,4 +62,20 @@ describe("LinkedLists testing with a list that is already set up", () => {
   test("tail should return the last node in the list", () => {
     expect(testList.tail().value).toBe("zola");
   });
+
+  test("at(4) should return zola", () => {
+    expect(testList.at(4).value).toBe("zola");
+  });
+
+  test("at(2) should return parrot", () => {
+    expect(testList.at(2).value).toBe("parrot");
+  });
+
+  test("at(0) should return dog", () => {
+    expect(testList.at(0).value).toBe("dog");
+  });
+
+  test("at(6) should return undefined", () => {
+    expect(testList.at(6)).toBe(undefined);
+  });
 });

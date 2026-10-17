@@ -57,7 +57,18 @@ class LinkedList {
   }
 
   // returns the node at the given index. if there is no node at the index - returns undefined
-  at(index) {}
+  at(index) {
+    //if the list is empty return undefined
+    if (!this.head) return undefined;
+
+    let currentNode = this.head;
+    for (let i = 0; i < index; i++) {
+      //stop the traversal and return undefined, if hits the end of the list
+      if (!currentNode.nextNode) return undefined;
+      currentNode = currentNode.nextNode;
+    }
+    return currentNode;
+  }
 }
 
 class Node {
