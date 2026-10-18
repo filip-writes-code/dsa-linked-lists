@@ -102,6 +102,22 @@ class LinkedList {
     }
     return -1;
   }
+
+  toString() {
+    let returnString = "";
+    let currentNode = this.head;
+    while (currentNode) {
+      let printValue = `( ${currentNode.value} )`;
+      returnString += printValue;
+      currentNode = currentNode.nextNode;
+      if (currentNode) {
+        returnString += " -> ";
+      } else {
+        returnString += " -> null";
+      }
+    }
+    return returnString;
+  }
 }
 
 class Node {

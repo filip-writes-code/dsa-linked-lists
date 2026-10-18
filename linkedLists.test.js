@@ -126,4 +126,12 @@ describe("LinkedLists testing with a list that is already set up", () => {
     testList.prepend("zola");
     expect(testList.findIndex("zola")).toBe(0);
   });
+
+  test("toString() should return all the values", () => {
+    expect(testList.toString()).toBe(
+      "( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null",
+    );
+  });
 });
+
+// ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null
