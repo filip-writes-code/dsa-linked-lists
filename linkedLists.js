@@ -120,6 +120,9 @@ class LinkedList {
     }
     return returnString;
   }
+
+  // inserts new nodes with the given values at the given index
+  insertAt(index, ...values) {}
 }
 
 class Node {
