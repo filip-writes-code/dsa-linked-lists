@@ -104,6 +104,8 @@ class LinkedList {
   }
 
   toString() {
+    if (!this.head) return "null"; //returns null when the list is empty
+
     let returnString = "";
     let currentNode = this.head;
     while (currentNode) {

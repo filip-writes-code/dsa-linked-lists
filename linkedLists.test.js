@@ -57,6 +57,10 @@ describe("LinkedLists class testing with setup and teardown", () => {
   test("contains('zola') should return false on empy list", () => {
     expect(testList.contains("zola")).toBe(false);
   });
+
+  test('.toString should return "null"', () => {
+    expect(testList.toString()).toBe("null");
+  });
 });
 // tests with an already populated list
 describe("LinkedLists testing with a list that is already set up", () => {
