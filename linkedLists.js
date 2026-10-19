@@ -137,6 +137,20 @@ class LinkedList {
     let lastNodeOfTheChain = nodeBeforeIndex;
     lastNodeOfTheChain.nextNode = nodeAtIndex;
   }
+
+  // Removes the node at the given index
+  removeAt(index) {
+    //if index is out of bounds(below 0 or greater than the size of the list - thrown an error)
+    if (index < 0 || index >= this.size()) {
+      throw new RangeError("Value of index is out of bounds");
+    }
+    if (index === 0) return this.pop();
+    let nodeToBeDeleted = this.at(index);
+    let nodeAfter = nodeToBeDeleted.nextNode;
+    let nodeBefore = this.at(index - 1);
+
+    nodeBefore.nextNode = nodeAfter;
+  }
 }
 
 class Node {

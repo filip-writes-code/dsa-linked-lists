@@ -162,4 +162,31 @@ describe("LinkedLists testing with a list that is already set up", () => {
       testList.insertAt(6);
     }).toThrow(RangeError);
   });
+
+  test("removeAt(1) should work", () => {
+    testList.removeAt(1);
+    expect(testList.toString()).toBe(
+      "( dog ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null",
+    );
+  });
+
+  test("removeAt(0) should work", () => {
+    testList.removeAt(0);
+    expect(testList.toString()).toBe(
+      "( cat ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null",
+    );
+  });
+
+  test("removeAt(4) should work", () => {
+    testList.removeAt(4);
+    expect(testList.toString()).toBe(
+      "( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> null",
+    );
+  });
+
+  test("removeAt(5) should throw a RangeError", () => {
+    expect(() => {
+      testList.removeAt(5);
+    }).toThrow(RangeError);
+  });
 });
