@@ -151,7 +151,14 @@ describe("LinkedLists testing with a list that is already set up", () => {
     );
   });
 
-  test("insertAt(0) should throw a RangeError", () => {
+  test("insertAt(0, 'house') should add multiple values", () => {
+    testList.insertAt(0, "house", "roof", "umbrella");
+    expect(testList.toString()).toBe(
+      "( house ) -> ( roof ) -> ( umbrella ) -> ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null",
+    );
+  });
+
+  test("insertAt(-1) should throw a RangeError", () => {
     expect(() => {
       testList.insertAt(-1);
     }).toThrow(RangeError);

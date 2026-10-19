@@ -60,6 +60,7 @@ class LinkedList {
   at(index) {
     //if the list is empty return undefined
     if (!this.head) return undefined;
+    if (index < 0) return undefined;
 
     let currentNode = this.head;
     for (let i = 0; i < index; i++) {
@@ -131,7 +132,10 @@ class LinkedList {
     let nodeBeforeIndex = this.at(index - 1);
     values.forEach((value) => {
       let newNode = new Node(value);
-      nodeBeforeIndex.nextNode = newNode;
+      if (!nodeBeforeIndex) this.head = newNode;
+      else {
+        nodeBeforeIndex.nextNode = newNode;
+      }
       nodeBeforeIndex = newNode;
     });
     let lastNodeOfTheChain = nodeBeforeIndex;
