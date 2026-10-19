@@ -122,7 +122,21 @@ class LinkedList {
   }
 
   // inserts new nodes with the given values at the given index
-  insertAt(index, ...values) {}
+  insertAt(index, ...values) {
+    if (index < 0 || index > this.size()) {
+      throw new RangeError("Value of index is out of bounds.");
+    }
+
+    let nodeAtIndex = this.at(index);
+    let nodeBeforeIndex = this.at(index - 1);
+    values.forEach((value) => {
+      let newNode = new Node(value);
+      nodeBeforeIndex.nextNode = newNode;
+      nodeBeforeIndex = newNode;
+    });
+    let lastNodeOfTheChain = nodeBeforeIndex;
+    lastNodeOfTheChain.nextNode = nodeAtIndex;
+  }
 }
 
 class Node {

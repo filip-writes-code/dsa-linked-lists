@@ -136,6 +136,30 @@ describe("LinkedLists testing with a list that is already set up", () => {
       "( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null",
     );
   });
-});
 
-// ( dog ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null
+  test("insertAt(1, 'house') should work", () => {
+    testList.insertAt(1, "house");
+    expect(testList.toString()).toBe(
+      "( dog ) -> ( house ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null",
+    );
+  });
+
+  test("insertAt(1, 'house') should add multiple values", () => {
+    testList.insertAt(1, "house", "roof", "umbrella");
+    expect(testList.toString()).toBe(
+      "( dog ) -> ( house ) -> ( roof ) -> ( umbrella ) -> ( cat ) -> ( parrot ) -> ( hamster ) -> ( zola ) -> null",
+    );
+  });
+
+  test("insertAt(0) should throw a RangeError", () => {
+    expect(() => {
+      testList.insertAt(-1);
+    }).toThrow(RangeError);
+  });
+
+  test("insertAt(6) should throw a RangeError", () => {
+    expect(() => {
+      testList.insertAt(6);
+    }).toThrow(RangeError);
+  });
+});
